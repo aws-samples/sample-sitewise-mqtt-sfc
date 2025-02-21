@@ -1,0 +1,11 @@
+address,value,range,description
+1,1,0;99, Alarm_code
+2,1,0;1, Compressor state
+3,100,0;300, compressor rpm
+4,1,0;30, condensator
+5,1,0;1, defrosting
+6,0,0;1, door state
+7,3000,1000;50000, power consumption
+8,1,0;1, ok not ok 
+9,8,4;8, tempurature
+10,7,7;7, temperature

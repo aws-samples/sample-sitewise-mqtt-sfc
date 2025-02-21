@@ -1,0 +1,18 @@
+{
+    "propertyAlias": "hello2",
+    "propertyValues": [
+        {
+            "quality": "GOOD",
+            "timestamp": {
+                "offsetInNanos": 0,
+                "timeInSeconds": 1740130709
+            },
+            "value": {
+                "stringValue": null,
+                "integerValue": 405,
+                "doubleValue": null,
+                "booleanValue": null
+            }
+        }
+    ]
+}

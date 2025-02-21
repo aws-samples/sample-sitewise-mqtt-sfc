@@ -1,0 +1,142 @@
+{
+    "AWSVersion": "2022-04-02",
+    "Name": "read modbus-tcp, transform payload to Sitewise BatchPutAssetPropertyValue & send to local edge mqtt broker",
+    "Version": 1,
+    "LogLevel": "Info",
+    "ElementNames": {
+        "Value": "value",
+        "Timestamp": "timestamp",
+        "Metadata": "metadata"
+    },
+    "Schedules": [
+        {
+            "Name": "Modbus2Mqtt",
+            "Interval": 5000,
+            "Description": "read from local modbus-tcp server at port 502",
+            "Active": true,
+            "TimestampLevel": "None",
+            "Sources": {
+                "modbus-source": [
+                    "*"
+                ]
+            },
+            "Targets": [
+                "DebugTarget",
+                "swMqttTarget"
+            ]
+        }
+    ],
+    "Sources": {
+        "modbus-source": {
+            "Name": "ModbusSource1",
+            "ProtocolAdapter": "ModbusAdapter",
+            "Description": "Production line Modbus source",
+            "AdapterDevice": "PLC1",
+            "Channels": {
+                "1": {
+                    "Name": "/refrigerator/WestMarket/vegetables/room1/Alarm_code",
+                    "Address": 1,
+                    "Type": "Coil"
+                },
+                "2": {
+                    "Name": "/refrigerator/WestMarket/vegetables/room1/Compressor_state",
+                    "Address": 2,
+                    "Type": "Coil"
+                },
+                "3": {
+                    "Name": "/refrigerator/WestMarket/vegetables/room1/Compressor_rpm",
+                    "Address": 3,
+                    "Type": "HoldingRegister"
+                },
+                "4": {
+                    "Name": "/refrigerator/WestMarket/vegetables/room1/Condensator",
+                    "Address": 4,
+                    "Type": "HoldingRegister"
+                },
+                "5": {
+                    "Name": "/refrigerator/WestMarket/vegetables/room1/Defrosting",
+                    "Address": 5,
+                    "Type": "HoldingRegister"
+                },
+                "6": {
+                    "Name": "/refrigerator/WestMarket/vegetables/room1/Door_state",
+                    "Address": 6,
+                    "Type": "HoldingRegister"
+                },
+                "7": {
+                    "Name": "/refrigerator/WestMarket/vegetables/room1/Power_consumption",
+                    "Address": 7,
+                    "Type": "HoldingRegister"
+                },
+                "8": {
+                    "Name": "/refrigerator/WestMarket/vegetables/room1/Status",
+                    "Address": 8,
+                    "Type": "HoldingRegister"
+                },
+                "9": {
+                    "Name": "/refrigerator/WestMarket/vegetables/room1/Temperature",
+                    "Address": 9,
+                    "Type": "HoldingRegister"
+                },
+                "10": {
+                    "Name": "/refrigerator/WestMarket/vegetables/room1/TemperatureSet",
+                    "Address": 9,
+                    "Type": "HoldingRegister"
+                }
+            }
+        }
+    },
+    "Targets": {
+        "DebugTarget": {
+            "Active": true,
+            "TargetType": "DEBUG-TARGET",
+            "Template": "swBatchPutTemplate.vm"
+        },
+        "swMqttTarget": {
+            "TargetType": "MQTT-TARGET",
+            "EndPoint": "tcp://localhost",
+            "Port": 1883,
+            "TopicName": "%channel%",
+            "Template": "swBatchPutTemplate.vm"
+        }
+    },
+    "TargetTypes": {
+        "DEBUG-TARGET": {
+            "JarFiles": [
+                "${SFC_DEPLOYMENT_DIR}/debug-target/lib"
+            ],
+            "FactoryClassName": "com.amazonaws.sfc.debugtarget.DebugTargetWriter"
+        },
+        "MQTT-TARGET": {
+            "JarFiles": [
+                "${SFC_DEPLOYMENT_DIR}/mqtt-target/lib"
+            ],
+            "FactoryClassName": "com.amazonaws.sfc.mqtt.MqttTargetWriter"
+        }
+    },
+    "AdapterTypes": {
+        "MODBUS-TCP": {
+            "JarFiles": [
+                "${SFC_DEPLOYMENT_DIR}/modbus-tcp/lib/"
+            ],
+            "FactoryClassName": "com.amazonaws.sfc.modbus.tcp.ModbusTcpAdapter"
+        }
+    },
+    "ProtocolAdapters": {
+        "ModbusAdapter": {
+            "AdapterType": "MODBUS-TCP",
+            "Devices": {
+                "PLC1": {
+                    "Name": "PLC1",
+                    "Address": "localhost",
+                    "DeviceId": 1,
+                    "Port": 502,
+                    "ConnectTimeout": 5000,
+                    "WaitAfterConnectError": 5000,
+                    "WaitAfterWriteError": 1000,
+                    "WaitAfterReadError": 1000
+                }
+            }
+        }
+    }
+}
