@@ -47,7 +47,7 @@ async def update_modbus_data(context, csv_data):
                 #skip static value
                 continue
             value = random.randrange(int(min), int(max))
-            print(item_key, [value])
+            print(item_key+1, [value])
             context[1].setValues( 3, item_key, [value])
 
         print("Updated Modbus registers")

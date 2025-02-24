@@ -1,18 +1,46 @@
 {
-    "propertyAlias": "hello2",
-    "propertyValues": [
-        {
-            "quality": "GOOD",
-            "timestamp": {
-                "offsetInNanos": 0,
-                "timeInSeconds": 1740130709
-            },
-            "value": {
-                "stringValue": null,
-                "integerValue": 405,
-                "doubleValue": null,
-                "booleanValue": null
-            }
-        }
-    ]
+    #foreach($sourceName in $sources.keySet())
+        #set($source = $sources[$sourceName])
+        #set($ts_source = $sources[$sourceName]["timestamp"])
+        ## source values loop
+        #foreach($valueName in $source["values"].keySet())
+            #set( $value = $source["values"][$valueName]["value"] )
+            #set( $ts_value = $source["values"][$valueName]["timestamp"] )
+            #set( $ts_value_epoch = )
+            "propertyAlias": "$valueName",
+            "propertyValues": [
+{
+                    "quality": "GOOD",
+                    "timestamp": {
+                        "offsetInNanos": $date,
+                        "timeInSeconds": $ts_value_epoch
+                    },
+                    "value": {
+                        #if( $valueName.endsWith("Compressor_rpm"))
+                            "doubleValue: $value
+                        #end
+                        #if( $valueName.endsWith("Condensator"))
+                            "doubleValue: $value
+                        #end
+                        #if( $valueName.endsWith("Defrosting"))
+                            "integerValue: $value
+                        #end
+                        #if( $valueName.endsWith("Door_state"))
+                            "booleanValue: $value
+                        #end
+                        #if( $valueName.endsWith("Power"))
+                            "doubleValue: $value
+                        #end
+                        #if( $valueName.endsWith("State"))
+                            "booleanValue: $value
+                        #end
+                        #if( $valueName.endsWith("Temperature"))
+                            "doubleValue: $value
+                        #end
+                    }
+                   
+                }
+            #end
+            ]
+    #end
 }

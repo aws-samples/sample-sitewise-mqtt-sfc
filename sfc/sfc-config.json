@@ -14,7 +14,7 @@
             "Interval": 5000,
             "Description": "read from local modbus-tcp server at port 502",
             "Active": true,
-            "TimestampLevel": "None",
+            "TimestampLevel": "Both",
             "Sources": {
                 "modbus-source": [
                     "*"
@@ -33,54 +33,39 @@
             "Description": "Production line Modbus source",
             "AdapterDevice": "PLC1",
             "Channels": {
-                "1": {
-                    "Name": "/refrigerator/WestMarket/vegetables/room1/Alarm_code",
-                    "Address": 1,
-                    "Type": "Coil"
-                },
-                "2": {
-                    "Name": "/refrigerator/WestMarket/vegetables/room1/Compressor_state",
-                    "Address": 2,
-                    "Type": "Coil"
-                },
-                "3": {
-                    "Name": "/refrigerator/WestMarket/vegetables/room1/Compressor_rpm",
-                    "Address": 3,
-                    "Type": "HoldingRegister"
-                },
                 "4": {
-                    "Name": "/refrigerator/WestMarket/vegetables/room1/Condensator",
+                    "Name": "/refrigerator/WestMarket/vegetables/room1/Compressor_rpm",
                     "Address": 4,
                     "Type": "HoldingRegister"
                 },
                 "5": {
-                    "Name": "/refrigerator/WestMarket/vegetables/room1/Defrosting",
+                    "Name": "/refrigerator/WestMarket/vegetables/room1/Condensator",
                     "Address": 5,
                     "Type": "HoldingRegister"
                 },
                 "6": {
-                    "Name": "/refrigerator/WestMarket/vegetables/room1/Door_state",
+                    "Name": "/refrigerator/WestMarket/vegetables/room1/Defrosting",
                     "Address": 6,
                     "Type": "HoldingRegister"
                 },
                 "7": {
-                    "Name": "/refrigerator/WestMarket/vegetables/room1/Power_consumption",
+                    "Name": "/refrigerator/WestMarket/vegetables/room1/Door_state",
                     "Address": 7,
                     "Type": "HoldingRegister"
                 },
                 "8": {
-                    "Name": "/refrigerator/WestMarket/vegetables/room1/Status",
+                    "Name": "/refrigerator/WestMarket/vegetables/room1/Power",
                     "Address": 8,
                     "Type": "HoldingRegister"
                 },
                 "9": {
-                    "Name": "/refrigerator/WestMarket/vegetables/room1/Temperature",
+                    "Name": "/refrigerator/WestMarket/vegetables/room1/State",
                     "Address": 9,
                     "Type": "HoldingRegister"
                 },
                 "10": {
-                    "Name": "/refrigerator/WestMarket/vegetables/room1/TemperatureSet",
-                    "Address": 9,
+                    "Name": "/refrigerator/WestMarket/vegetables/room1/Temperature",
+                    "Address": 10,
                     "Type": "HoldingRegister"
                 }
             }
@@ -103,13 +88,15 @@
     "TargetTypes": {
         "DEBUG-TARGET": {
             "JarFiles": [
-                "${SFC_DEPLOYMENT_DIR}/debug-target/lib"
+                "${SFC_DEPLOYMENT_DIR}/debug-target/lib",
+                "${SFC_DEPLOYMENT_DIR}/velocity-tools-generic-3.1.jar"
             ],
             "FactoryClassName": "com.amazonaws.sfc.debugtarget.DebugTargetWriter"
         },
         "MQTT-TARGET": {
             "JarFiles": [
-                "${SFC_DEPLOYMENT_DIR}/mqtt-target/lib"
+                "${SFC_DEPLOYMENT_DIR}/mqtt-target/lib",
+                "${SFC_DEPLOYMENT_DIR}/velocity-tools-generic-3.1.jar"
             ],
             "FactoryClassName": "com.amazonaws.sfc.mqtt.MqttTargetWriter"
         }
