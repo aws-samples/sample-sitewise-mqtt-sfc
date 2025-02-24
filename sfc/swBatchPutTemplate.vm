@@ -5,15 +5,14 @@
         ## source values loop
         #foreach($valueName in $source["values"].keySet())
             #set( $value = $source["values"][$valueName]["value"] )
-            #set( $ts_value = $source["values"][$valueName]["timestamp"] )
-            #set( $ts_value_epoch = $date)
             "propertyAlias": "$valueName",
             "propertyValues": [
 {
                     "quality": "GOOD",
                     "timestamp": {
-                        "offsetInNanos": $ts_value_epoch,
-                        "timeInSeconds": $ts_value_epoch
+                    ##referencing sfc-context variables here...
+                        "offsetInNanos": $timestamp_epoch_offset_nanosec,
+                        "timeInSeconds": $timestamp_epoch_sec
                     },
                     "value": {
                         #if( $valueName.endsWith("Compressor_rpm"))
