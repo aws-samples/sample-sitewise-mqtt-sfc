@@ -88,15 +88,13 @@
     "TargetTypes": {
         "DEBUG-TARGET": {
             "JarFiles": [
-                "${SFC_DEPLOYMENT_DIR}/debug-target/lib",
-                "${SFC_DEPLOYMENT_DIR}/velocity-tools-generic-3.1.jar"
+                "${SFC_DEPLOYMENT_DIR}/debug-target/lib"
             ],
             "FactoryClassName": "com.amazonaws.sfc.debugtarget.DebugTargetWriter"
         },
         "MQTT-TARGET": {
             "JarFiles": [
-                "${SFC_DEPLOYMENT_DIR}/mqtt-target/lib",
-                "${SFC_DEPLOYMENT_DIR}/velocity-tools-generic-3.1.jar"
+                "${SFC_DEPLOYMENT_DIR}/mqtt-target/lib"
             ],
             "FactoryClassName": "com.amazonaws.sfc.mqtt.MqttTargetWriter"
         }

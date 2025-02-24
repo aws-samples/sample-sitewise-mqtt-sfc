@@ -6,13 +6,13 @@
         #foreach($valueName in $source["values"].keySet())
             #set( $value = $source["values"][$valueName]["value"] )
             #set( $ts_value = $source["values"][$valueName]["timestamp"] )
-            #set( $ts_value_epoch = )
+            #set( $ts_value_epoch = $date)
             "propertyAlias": "$valueName",
             "propertyValues": [
 {
                     "quality": "GOOD",
                     "timestamp": {
-                        "offsetInNanos": $date,
+                        "offsetInNanos": $ts_value_epoch,
                         "timeInSeconds": $ts_value_epoch
                     },
                     "value": {
