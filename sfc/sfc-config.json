@@ -21,7 +21,7 @@
                 ]
             },
             "Targets": [
-                "DebugTarget",
+                "#DebugTarget",
                 "swMqttTarget"
             ]
         }
