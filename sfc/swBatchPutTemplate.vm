@@ -16,25 +16,25 @@
                     },
                     "value": {
                         #if( $valueName.endsWith("Compressor_rpm"))
-                            "doubleValue: $value
+                            "doubleValue": $value
                         #end
                         #if( $valueName.endsWith("Condensator"))
-                            "doubleValue: $value
+                            "doubleValue": $value
                         #end
                         #if( $valueName.endsWith("Defrosting"))
-                            "integerValue: $value
+                            "integerValue": $value
                         #end
                         #if( $valueName.endsWith("Door_state"))
-                            "booleanValue: $value
+                            "booleanValue": $value
                         #end
                         #if( $valueName.endsWith("Power"))
-                            "doubleValue: $value
+                            "doubleValue": $value
                         #end
                         #if( $valueName.endsWith("State"))
-                            "booleanValue: $value
+                            "booleanValue": $value
                         #end
                         #if( $valueName.endsWith("Temperature"))
-                            "doubleValue: $value
+                            "doubleValue": $value
                         #end
                     }
                    
