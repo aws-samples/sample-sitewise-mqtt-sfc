@@ -216,10 +216,10 @@ The json file [sfc-config.json](./sfc/sfc-config.json) represents an [in-process
 <br>
 <br>
 
-> *swBatchPutTemplate.vm*
-
 The Velocity Template [swBatchPutTemplate.vm](./sfc/swBatchPutTemplate.vm), referenced in the SFC config file above, transforms the [standard SFC Output Format](https://github.com/aws-samples/shopfloor-connectivity/blob/mainline/docs/sfc-data-format.md) to a Sitewise [BatchPutAssetPropertyValue](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchPutAssetPropertyValue.html)
 
+
+> *swBatchPutTemplate.vm*
 
 ```sh
 {
