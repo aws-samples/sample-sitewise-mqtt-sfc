@@ -11,7 +11,7 @@
     "Schedules": [
         {
             "Name": "Modbus2Mqtt",
-            "Interval": 5000,
+            "Interval": 500,
             "Description": "read from local modbus-tcp server at port 502",
             "Active": true,
             "TimestampLevel": "Both",
@@ -75,13 +75,15 @@
         "DebugTarget": {
             "Active": true,
             "TargetType": "DEBUG-TARGET",
+            "TemplateEpochTimestamp": true,
             "Template": "swBatchPutTemplate.vm"
         },
         "swMqttTarget": {
             "TargetType": "MQTT-TARGET",
             "EndPoint": "tcp://localhost",
             "Port": 1883,
-            "TopicName": "%channel%",
+            "TopicName": "%channel%", 
+            "TemplateEpochTimestamp": true,
             "Template": "swBatchPutTemplate.vm"
         }
     },

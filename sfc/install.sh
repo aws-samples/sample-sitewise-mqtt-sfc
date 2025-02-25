@@ -1,4 +1,4 @@
-export VERSION="v1.8.1"
+export VERSION="v1.8.3"
 export SFC_DEPLOYMENT_DIR=$(pwd)
 
 wget https://github.com/aws-samples/shopfloor-connectivity/releases/download/$VERSION/\
