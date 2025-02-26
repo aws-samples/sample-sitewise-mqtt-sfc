@@ -33,37 +33,37 @@
             "Description": "Production line Modbus source",
             "AdapterDevice": "PLC1",
             "Channels": {
-                "4": {
+                "Compressor_rpm": {
                     "Name": "/refrigerator/WestMarket/vegetables/room1/Compressor_rpm",
                     "Address": 4,
                     "Type": "HoldingRegister"
                 },
-                "5": {
+                "Condensator": {
                     "Name": "/refrigerator/WestMarket/vegetables/room1/Condensator",
                     "Address": 5,
                     "Type": "HoldingRegister"
                 },
-                "6": {
+                "Defrosting": {
                     "Name": "/refrigerator/WestMarket/vegetables/room1/Defrosting",
                     "Address": 6,
                     "Type": "HoldingRegister"
                 },
-                "7": {
+                "Door_state": {
                     "Name": "/refrigerator/WestMarket/vegetables/room1/Door_state",
                     "Address": 7,
                     "Type": "HoldingRegister"
                 },
-                "8": {
+                "Power": {
                     "Name": "/refrigerator/WestMarket/vegetables/room1/Power",
                     "Address": 8,
                     "Type": "HoldingRegister"
                 },
-                "9": {
+                "State": {
                     "Name": "/refrigerator/WestMarket/vegetables/room1/State",
                     "Address": 9,
                     "Type": "HoldingRegister"
                 },
-                "10": {
+                "Temperature": {
                     "Name": "/refrigerator/WestMarket/vegetables/room1/Temperature",
                     "Address": 10,
                     "Type": "HoldingRegister"
