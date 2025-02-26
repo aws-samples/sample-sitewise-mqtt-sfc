@@ -1,7 +1,8 @@
 sitewise-mqtt-sfc
 =================
 
-Use an MQTT-enabled AWS IoT Sitewise gateway to send data from various industrial equipment, using [SFC](https://github.com/aws-samples/shopfloor-connectivity), to Sitewise Service in the cloud.
+Use an MQTT-enabled AWS IoT Sitewise gateway to send data from various industrial equipment, using [SFC](https://github.com/aws-samples/shopfloor-connectivity), 
+to Sitewise Service in the cloud. An example showing how to ingest data to Sitewise from Modbus equipment.
 
 ```sh
                +------------------MQTT-enabled-Sitewise-Gateway------+                    
@@ -30,7 +31,7 @@ DEVICE         | |          |     |             |     |           +--+--> Amazon
 <br>
 <br>
 
-> The following steps require you to have a running v3 MQTT-enabled AWS IoT Sitewise Gateway.
+> Note: The following steps require you to have a running v3 MQTT-enabled AWS IoT Sitewise Gateway.
 
 
 #### **Step 1**: Login to SW Gateway and clone Repo
@@ -73,12 +74,16 @@ cd sfc
 
 #### **Step 4**: Inspect the SFC config and Velocity Template
 
+> Note: SFC also comes with a native [SitewiseEdge Adapter](https://github.com/aws-samples/shopfloor-connectivity/blob/mainline/docs/targets/aws-sitewiseedge.md), 
+having all mappings for the the v3 MQTT-enabled Gateway already included. That example here shows the generic [payload-transformation capabilities](https://github.com/aws-samples/shopfloor-connectivity/blob/mainline/docs/sfc-target-templates.md) of SFC.
+
 The json file [sfc-config.json](./sfc/sfc-config.json) represents an [in-process](https://github.com/aws-samples/shopfloor-connectivity/blob/mainline/docs/sfc-deployment.md) SFC configuration. It does:
 - define the sources and the source-channels (=modbus registers)
 - define the targets, where the source data is sent to (=mqtt broker)
     - within the targets config sections we set [`Template`](https://github.com/aws-samples/shopfloor-connectivity/blob/mainline/docs/core/target-configuration.md#template) to reference an Apache Velocity Template
     - within the targets config sections we set [`TemplateEpochTimestamp`](https://github.com/aws-samples/shopfloor-connectivity/blob/mainline/docs/core/target-configuration.md#templateepochtimestamp) to `true`, so that epochTimestamps are available in the Velocity Template context. 
     - `Template` and `TemplateEpochTimestamp` is needed to transform the [standard SFC Output Format](https://github.com/aws-samples/shopfloor-connectivity/blob/mainline/docs/sfc-data-format.md) to a Sitewise [BatchPutAssetPropertyValue](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchPutAssetPropertyValue.html)
+
 
 > *sfc-config.json*
 
@@ -276,21 +281,6 @@ cat run.sh
 # export SFC_DEPLOYMENT_DIR=$(pwd)
 # sfc-main/bin/sfc-main -config sfc-config.json -info
 ./run.sh
-#2025-02-25 16:36:33.27  INFO  - Creating configuration provider of type ConfigProvider
-#2025-02-25 16:36:33.38  INFO  - Waiting for configuration
-#2025-02-25 16:36:33.55  INFO  - Sending initial configuration from file "sfc-config.json"
-#2025-02-25 16:36:33.999 INFO  - Received configuration data from config provider
-#2025-02-25 16:36:34.01  INFO  - Waiting for configuration
-#2025-02-25 16:36:34.02  INFO  - Creating and starting new service instance
-#2025-02-25 16:36:34.101 INFO  - Created instance of service MainControllerService
-#2025-02-25 16:36:34.102 INFO  - Running service instance
-#2025-02-25 16:36:34.103 INFO  - Creating an in-process reader for adapter "ModbusAdapter" of protocol adapter type MODBUS-TCP
-#2025-02-25 16:36:34.161 INFO  - SFC_MODULE MODBUS-TCP: VERSION=1.0.0, MODBUS_VERSION=1.0.0, SFC_CORE_VERSION=1.8.1, SFC_IPC_VERSION=1.8.1, BUILD_DATE=2025-02-14
-#2025-02-25 16:36:34.165 INFO  - Creating in process target writer for target ID swMqttTarget
-#2025-02-25 16:36:34.259 INFO  - SFC_MODULE MQTT-TARGET: VERSION=1.0.0, SFC_CORE_VERSION=V1.8.2, SFC_IPC_VERSION=V1.8.2, BUILD_DATE=2025-02-24
-#2025-02-25 16:36:34.261 INFO  - MQTT Writer for target "swMqttTarget" writer publishing to topics at endpoint tcp://localhost on target swMqttTarget
-#2025-02-25 16:36:34.265 INFO  - No adapter or target metrics are collected
-#2025-02-25 16:36:34.307 INFO  - Connected to localhost:502
 ```
 
 #### **Step 6**: (Optional) Subscribe to MQTT broker
