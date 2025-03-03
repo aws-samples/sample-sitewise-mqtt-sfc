@@ -78,11 +78,12 @@ cd sfc
 having all mappings for the the v3 MQTT-enabled Gateway already included. That example here shows the generic [payload-transformation capabilities](https://github.com/aws-samples/shopfloor-connectivity/blob/mainline/docs/sfc-target-templates.md) of SFC.
 
 The json file [sfc-config.json](./sfc/sfc-config.json) represents an [in-process](https://github.com/aws-samples/shopfloor-connectivity/blob/mainline/docs/sfc-deployment.md) SFC configuration. It does:
-- define the sources and the source-channels (=modbus registers)
-- define the targets, where the source data is sent to (=mqtt broker)
-    - within the targets config sections we set [`Template`](https://github.com/aws-samples/shopfloor-connectivity/blob/mainline/docs/core/target-configuration.md#template) to reference an Apache Velocity Template
-    - within the targets config sections we set [`TemplateEpochTimestamp`](https://github.com/aws-samples/shopfloor-connectivity/blob/mainline/docs/core/target-configuration.md#templateepochtimestamp) to `true`, so that epochTimestamps are available in the Velocity Template context. 
-    - `Template` and `TemplateEpochTimestamp` is needed to transform the [standard SFC Output Format](https://github.com/aws-samples/shopfloor-connectivity/blob/mainline/docs/sfc-data-format.md) to a Sitewise [BatchPutAssetPropertyValue](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchPutAssetPropertyValue.html)
+- define the **Sources** and the [source-channels](https://github.com/aws-samples/shopfloor-connectivity/blob/mainline/docs/adapters/modbus.md#modbuschannelconfiguration) (=modbus registers)
+- define the **Targets**, where the source data is sent to (=mqtt broker) - related by one or more [Schedules](https://github.com/aws-samples/shopfloor-connectivity/blob/mainline/docs/core/schedule-configuration.md)
+    - within the Targets.swMqttTarget config sections we set [`TopicName`](https://github.com/aws-samples/shopfloor-connectivity/blob/mainline/docs/targets/mqtt.md#topicname) to `%channel%`. The [Mqtt-Target adapter](https://github.com/aws-samples/shopfloor-connectivity/blob/mainline/docs/targets/mqtt.md) supports to use source `channel` names as [dynamic variables](https://github.com/aws-samples/shopfloor-connectivity/blob/mainline/docs/targets/mqtt.md#topicname), in order to fan out each channel value to a matching mqtt-topic (channel-name==mqtt-topic-name).
+    - within the Targets.swMqttTarget config sections we set [`Template`](https://github.com/aws-samples/shopfloor-connectivity/blob/mainline/docs/core/target-configuration.md#template) to reference an Apache Velocity Template
+    - within the Targets.swMqttTarget config sections we set [`TemplateEpochTimestamp`](https://github.com/aws-samples/shopfloor-connectivity/blob/mainline/docs/core/target-configuration.md#templateepochtimestamp) to `true`, so that epochTimestamps are available in the Velocity Template context. 
+    - `Template` and `TemplateEpochTimestamp` are needed to transform the [standard SFC Output Format](https://github.com/aws-samples/shopfloor-connectivity/blob/mainline/docs/sfc-data-format.md) to a Sitewise [BatchPutAssetPropertyValue](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchPutAssetPropertyValue.html)
 
 
 > *sfc-config.json*
