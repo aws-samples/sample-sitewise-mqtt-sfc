@@ -145,7 +145,8 @@ For each measurement, an AWS IoT SiteWise property alias must be defined and map
 
 #### **Data model:**
 
-The Sitewise bulk import file in [sfc/sitewise-bulk-assets.json](./sfc/sitewise-bulk-assets.json) can be used to create the required asset models, asstes and asset-hierarachies. **Follow the steps, described ion the [Sitewise Bulk-Operations Docs](https://docs.aws.amazon.com/iot-sitewise/latest/userguide/running-bulk-operations-import.html)**.
+The Sitewise bulk import file in [sfc/sitewise-bulk-assets.json](./sfc/sitewise-bulk-assets.json) can be used to create the required asset models, 
+asstes and asset-hierarachies. **Follow the steps, described in the [Sitewise Bulk-Operations Docs](https://docs.aws.amazon.com/iot-sitewise/latest/userguide/running-bulk-operations-import.html)**.
 
 ```json
 {
