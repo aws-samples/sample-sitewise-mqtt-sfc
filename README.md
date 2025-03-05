@@ -139,6 +139,8 @@ In our example we are ingesting the data from modbus with the following structur
 |`10`	            |Tempurature	    |`/refrigerator/WestMarket/vegetables/room1/Temperature`	 |
 |`11`	            |Temperature set	|`/refrigerator/WestMarket/vegetables/room1/Temperature_set` |
 
+*Table 1: Modbus Registers to MQTT Topic Mapping*
+
 For each measurement, an AWS IoT SiteWise property alias must be defined and mapped to its corresponding MQTT topic. This mapping creates a direct relationship between the incoming MQTT messages and the asset properties in AWS IoT SiteWise. The alias has to be unique inside of SiteWise assets. 
 
 #### **Data model:**
