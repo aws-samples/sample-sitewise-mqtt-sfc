@@ -147,7 +147,7 @@ The Sitewise bulk import file in [sfc/sitewise-bulk-assets.json](./sfc/sitewise-
 
 ```json
 {
-    `"assetModelType": "ASSET_MODEL",`
+    "assetModelType": "ASSET_MODEL",
     "assetModelName": "Refrigerator",
     "assetModelProperties": [
         {
@@ -384,7 +384,7 @@ SFC includes a built-in Velocity template capability that simplifies message for
 
 > [*swBatchPutTemplate.vm*](./sfc/swBatchPutTemplate.vm)
 
-```json
+```sh
 {
     #foreach($sourceName in $sources.keySet())
         #set($source = $sources[$sourceName])
