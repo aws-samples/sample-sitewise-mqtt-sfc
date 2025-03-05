@@ -1,0 +1,562 @@
+{
+  "assetModels" : [ {
+    "assetModelId" : "a67e45f4-437f-4959-88e8-4e49be7fd437",
+    "assetModelName" : "ColdRoom",
+    "assetModelProperties" : [ {
+      "id" : "2ca58297-0636-4c87-9923-0bffdad9c51a",
+      "name" : "Model",
+      "dataType" : "STRING",
+      "type" : {
+        "attribute" : {
+          "defaultValue" : "000000"
+        }
+      }
+    }, {
+      "id" : "036fa3aa-85b8-411a-ac20-7edcd430fb63",
+      "name" : "Firmware",
+      "dataType" : "STRING",
+      "type" : {
+        "attribute" : {
+          "defaultValue" : "1.2"
+        }
+      }
+    }, {
+      "id" : "619ac3de-0e30-4555-84e9-64b5d9954dfd",
+      "name" : "Condensator",
+      "dataType" : "DOUBLE",
+      "unit" : "minutes",
+      "type" : {
+        "measurement" : { }
+      }
+    }, {
+      "id" : "6245280c-7fe5-43e1-8414-fcd864a0f865",
+      "name" : "Temperature_set",
+      "dataType" : "DOUBLE",
+      "type" : {
+        "measurement" : { }
+      }
+    }, {
+      "id" : "33a44a82-2dfb-498d-b4be-a68d4e0df7be",
+      "name" : "Alarm_code",
+      "dataType" : "INTEGER",
+      "type" : {
+        "measurement" : { }
+      }
+    }, {
+      "id" : "0eed61eb-ec68-4a7d-83bb-a0ebe99da5e6",
+      "name" : "state",
+      "dataType" : "BOOLEAN",
+      "type" : {
+        "measurement" : { }
+      }
+    }, {
+      "id" : "758f2599-6ec7-469c-97fa-8ece0da75b40",
+      "name" : "Serial_number",
+      "dataType" : "STRING",
+      "type" : {
+        "attribute" : {
+          "defaultValue" : "0000000"
+        }
+      }
+    }, {
+      "id" : "7cc5cd12-9619-4e01-8bea-aec11bf891d5",
+      "name" : "Compressor type",
+      "dataType" : "STRING",
+      "type" : {
+        "attribute" : {
+          "defaultValue" : "var"
+        }
+      }
+    }, {
+      "id" : "980c9bb5-1a8b-4e63-a06a-32035b298d1e",
+      "name" : "Valve_position",
+      "dataType" : "DOUBLE",
+      "type" : {
+        "measurement" : { }
+      }
+    }, {
+      "id" : "048ed6e9-e459-4588-a10a-36936127fede",
+      "name" : "Power",
+      "dataType" : "DOUBLE",
+      "type" : {
+        "measurement" : { }
+      }
+    }, {
+      "id" : "55e10760-70a1-49d4-8acc-06b8b312fe55",
+      "name" : "Door_state",
+      "dataType" : "BOOLEAN",
+      "type" : {
+        "measurement" : { }
+      }
+    }, {
+      "id" : "1d35e36b-1762-4abb-9702-3c6f0e9ec973",
+      "name" : "Defrosting",
+      "dataType" : "INTEGER",
+      "unit" : "second",
+      "type" : {
+        "measurement" : { }
+      }
+    }, {
+      "id" : "d6665dcf-2d23-4167-a2d8-425480afe0c0",
+      "name" : "Temperature",
+      "dataType" : "DOUBLE",
+      "type" : {
+        "measurement" : { }
+      }
+    }, {
+      "id" : "1cdcf094-3244-4001-877a-b8d644d5ae5e",
+      "name" : "Compressor",
+      "dataType" : "BOOLEAN",
+      "type" : {
+        "measurement" : { }
+      }
+    }, {
+      "id" : "14566871-7479-459b-a0a7-937a49041269",
+      "name" : "Compressor_rpm",
+      "dataType" : "DOUBLE",
+      "type" : {
+        "measurement" : { }
+      }
+    } ],
+    "assetModelCompositeModels" : [ ],
+    "assetModelHierarchies" : [ ],
+    "tags" : [ ]
+  }, {
+    "assetModelId" : "027a24ab-08b2-4630-91ff-00284d3056ff",
+    "assetModelName" : "Production",
+    "assetModelProperties" : [ {
+      "id" : "b45657e6-19c5-4e36-a04a-00b95a707407",
+      "name" : "Production",
+      "dataType" : "STRING",
+      "type" : {
+        "attribute" : {
+          "defaultValue" : "Compressor"
+        }
+      }
+    } ],
+    "assetModelCompositeModels" : [ ],
+    "assetModelHierarchies" : [ {
+      "id" : "b9d385d4-675f-4316-9fd5-98784f6a6db2",
+      "name" : "compressor",
+      "childAssetModelId" : "63c5fe61-8796-49e5-a166-1ac96513459f"
+    } ],
+    "tags" : [ ]
+  }, {
+    "assetModelId" : "63c5fe61-8796-49e5-a166-1ac96513459f",
+    "assetModelName" : "Entity",
+    "assetModelProperties" : [ {
+      "id" : "c7dab201-d72b-4279-a591-07db2a331840",
+      "name" : "Plant ID",
+      "dataType" : "STRING",
+      "type" : {
+        "attribute" : {
+          "defaultValue" : "00"
+        }
+      }
+    }, {
+      "id" : "46bebbfa-1fdb-43c9-9870-1ada22ecef39",
+      "name" : "Address",
+      "dataType" : "STRING",
+      "type" : {
+        "attribute" : {
+          "defaultValue" : "Street 1"
+        }
+      }
+    } ],
+    "assetModelCompositeModels" : [ ],
+    "assetModelHierarchies" : [ {
+      "id" : "eed38b23-d1fd-44ea-9968-7b2b8bb81642",
+      "name" : "compressor",
+      "childAssetModelId" : "2172865e-d048-4c3f-a06e-328b1cbae181"
+    } ],
+    "tags" : [ ]
+  }, {
+    "assetModelId" : "2172865e-d048-4c3f-a06e-328b1cbae181",
+    "assetModelName" : "Area",
+    "assetModelProperties" : [ {
+      "id" : "52f18b39-fce4-4fb7-87e3-8ade482034a7",
+      "name" : "Building name",
+      "dataType" : "STRING",
+      "type" : {
+        "attribute" : {
+          "defaultValue" : "Y"
+        }
+      }
+    } ],
+    "assetModelCompositeModels" : [ ],
+    "assetModelHierarchies" : [ {
+      "id" : "d22c8adc-a038-4f28-8766-1e989370fd73",
+      "name" : "compressor",
+      "childAssetModelId" : "a67e45f4-437f-4959-88e8-4e49be7fd437"
+    } ],
+    "tags" : [ ]
+  }, {
+    "assetModelId" : "27652a17-ff60-4c32-9776-2a520c36697e",
+    "assetModelName" : "Location",
+    "assetModelProperties" : [ {
+      "id" : "2a741e3e-780d-4a8a-9961-6a456faf9842",
+      "name" : "Location",
+      "dataType" : "STRING",
+      "type" : {
+        "attribute" : {
+          "defaultValue" : "BER"
+        }
+      }
+    } ],
+    "assetModelCompositeModels" : [ ],
+    "assetModelHierarchies" : [ {
+      "id" : "b2778298-982e-4cb1-aa64-60dea0ab580b",
+      "name" : "compressor",
+      "childAssetModelId" : "63c5fe61-8796-49e5-a166-1ac96513459f"
+    } ],
+    "tags" : [ ]
+  } ],
+  "assets" : [ {
+    "assetId" : "1718c2c2-b1ef-4783-8ea7-05946c0f09e0",
+    "assetModelId" : "a67e45f4-437f-4959-88e8-4e49be7fd437",
+    "assetName" : "Room1",
+    "assetProperties" : [ {
+      "id" : "0eed61eb-ec68-4a7d-83bb-a0ebe99da5e6",
+      "alias" : "/refrigerator/WestMarket/vegetables/room1/State",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "14566871-7479-459b-a0a7-937a49041269",
+      "alias" : "/refrigerator/WestMarket/vegetables/room1/Compressor_rpm",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "55e10760-70a1-49d4-8acc-06b8b312fe55",
+      "alias" : "/refrigerator/WestMarket/vegetables/room1/Door_state",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "7cc5cd12-9619-4e01-8bea-aec11bf891d5",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "d6665dcf-2d23-4167-a2d8-425480afe0c0",
+      "alias" : "/refrigerator/WestMarket/vegetables/room1/Temperature",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "036fa3aa-85b8-411a-ac20-7edcd430fb63",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "1d35e36b-1762-4abb-9702-3c6f0e9ec973",
+      "alias" : "/refrigerator/WestMarket/vegetables/room1/Defrosting",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "619ac3de-0e30-4555-84e9-64b5d9954dfd",
+      "alias" : "/refrigerator/WestMarket/vegetables/room1/Condensator",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "2ca58297-0636-4c87-9923-0bffdad9c51a",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "048ed6e9-e459-4588-a10a-36936127fede",
+      "alias" : "/refrigerator/WestMarket/vegetables/room1/Power",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "758f2599-6ec7-469c-97fa-8ece0da75b40",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    } ],
+    "assetHierarchies" : [ ],
+    "tags" : [ ]
+  }, {
+    "assetId" : "c2d4de55-9118-458b-9e05-789f132910cd",
+    "assetModelId" : "63c5fe61-8796-49e5-a166-1ac96513459f",
+    "assetName" : "WestMarket",
+    "assetProperties" : [ {
+      "id" : "c7dab201-d72b-4279-a591-07db2a331840",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "46bebbfa-1fdb-43c9-9870-1ada22ecef39",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    } ],
+    "assetHierarchies" : [ {
+      "id" : "eed38b23-d1fd-44ea-9968-7b2b8bb81642",
+      "childAssetId" : "05341e00-f574-452f-8473-279a66cbbfe1"
+    } ],
+    "tags" : [ ]
+  }, {
+    "assetId" : "91a8c05b-b7f4-4650-b011-e48e4223fdeb",
+    "assetModelId" : "a67e45f4-437f-4959-88e8-4e49be7fd437",
+    "assetName" : "Room2",
+    "assetProperties" : [ {
+      "id" : "048ed6e9-e459-4588-a10a-36936127fede",
+      "alias" : "/refrigerator/westmarket/vegetables/room2/power",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "1cdcf094-3244-4001-877a-b8d644d5ae5e",
+      "alias" : "/refrigerator/westmarket/vegetables/room2/compressor",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "2ca58297-0636-4c87-9923-0bffdad9c51a",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "758f2599-6ec7-469c-97fa-8ece0da75b40",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "d6665dcf-2d23-4167-a2d8-425480afe0c0",
+      "alias" : "/refrigerator/westmarket/vegetables/room2/temperature",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "14566871-7479-459b-a0a7-937a49041269",
+      "alias" : "/refrigerator/westmarket/vegetables/room2/compressor_rpm",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "980c9bb5-1a8b-4e63-a06a-32035b298d1e",
+      "alias" : "/refrigerator/westmarket/vegetables/room2/valve_position",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "7cc5cd12-9619-4e01-8bea-aec11bf891d5",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "55e10760-70a1-49d4-8acc-06b8b312fe55",
+      "alias" : "/refrigerator/westmarket/vegetables/room2/door_state",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "619ac3de-0e30-4555-84e9-64b5d9954dfd",
+      "alias" : "/refrigerator/westmarket/vegetables/room2/condensator",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "036fa3aa-85b8-411a-ac20-7edcd430fb63",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "1d35e36b-1762-4abb-9702-3c6f0e9ec973",
+      "alias" : "/refrigerator/westmarket/vegetables/room2/defrosting",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "0eed61eb-ec68-4a7d-83bb-a0ebe99da5e6",
+      "alias" : "/refrigerator/westmarket/vegetables/room2/state",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "6245280c-7fe5-43e1-8414-fcd864a0f865",
+      "alias" : "/refrigerator/westmarket/vegetables/room2/temperature_set",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "33a44a82-2dfb-498d-b4be-a68d4e0df7be",
+      "alias" : "/refrigerator/westmarket/vegetables/room2/Alarm_code",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    } ],
+    "assetHierarchies" : [ ],
+    "tags" : [ ]
+  }, {
+    "assetId" : "29357565-c5bf-4a4d-8eba-48243a0f5658",
+    "assetModelId" : "a67e45f4-437f-4959-88e8-4e49be7fd437",
+    "assetName" : "Room4",
+    "assetProperties" : [ {
+      "id" : "0eed61eb-ec68-4a7d-83bb-a0ebe99da5e6",
+      "alias" : "/refrigerator/westmarket/vegetables/room4/state",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "980c9bb5-1a8b-4e63-a06a-32035b298d1e",
+      "alias" : "/refrigerator/westmarket/vegetables/room4/valve_position",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "6245280c-7fe5-43e1-8414-fcd864a0f865",
+      "alias" : "/refrigerator/westmarket/vegetables/room4/temperature_set",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "048ed6e9-e459-4588-a10a-36936127fede",
+      "alias" : "/refrigerator/westmarket/vegetables/room4/power",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "1d35e36b-1762-4abb-9702-3c6f0e9ec973",
+      "alias" : "/refrigerator/westmarket/vegetables/room4/defrosting",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "2ca58297-0636-4c87-9923-0bffdad9c51a",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "758f2599-6ec7-469c-97fa-8ece0da75b40",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "14566871-7479-459b-a0a7-937a49041269",
+      "alias" : "/refrigerator/westmarket/vegetables/room4/compressor_rpm",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "7cc5cd12-9619-4e01-8bea-aec11bf891d5",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "d6665dcf-2d23-4167-a2d8-425480afe0c0",
+      "alias" : "/refrigerator/westmarket/vegetables/room4/temperature",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "33a44a82-2dfb-498d-b4be-a68d4e0df7be",
+      "alias" : "/refrigerator/westmarket/vegetables/room4/Alarm_code",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "036fa3aa-85b8-411a-ac20-7edcd430fb63",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "1cdcf094-3244-4001-877a-b8d644d5ae5e",
+      "alias" : "/refrigerator/westmarket/vegetables/room4/compressor",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "619ac3de-0e30-4555-84e9-64b5d9954dfd",
+      "alias" : "/refrigerator/westmarket/vegetables/room4/condensator",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "55e10760-70a1-49d4-8acc-06b8b312fe55",
+      "alias" : "/refrigerator/westmarket/vegetables/room4/door_state",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    } ],
+    "assetHierarchies" : [ ],
+    "tags" : [ ]
+  }, {
+    "assetId" : "23bf8b19-1d54-4e77-b5c9-8cd216c0879d",
+    "assetModelId" : "a67e45f4-437f-4959-88e8-4e49be7fd437",
+    "assetName" : "Room3",
+    "assetProperties" : [ {
+      "id" : "048ed6e9-e459-4588-a10a-36936127fede",
+      "alias" : "/refrigerator/westmarket/vegetables/room3/power",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "1cdcf094-3244-4001-877a-b8d644d5ae5e",
+      "alias" : "/refrigerator/westmarket/vegetables/room3/compressor",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "980c9bb5-1a8b-4e63-a06a-32035b298d1e",
+      "alias" : "/refrigerator/westmarket/vegetables/room3/valve_position",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "2ca58297-0636-4c87-9923-0bffdad9c51a",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "758f2599-6ec7-469c-97fa-8ece0da75b40",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "d6665dcf-2d23-4167-a2d8-425480afe0c0",
+      "alias" : "/refrigerator/westmarket/vegetables/room3/temperature",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "6245280c-7fe5-43e1-8414-fcd864a0f865",
+      "alias" : "/refrigerator/westmarket/vegetables/room3/temperature_set",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "619ac3de-0e30-4555-84e9-64b5d9954dfd",
+      "alias" : "/refrigerator/westmarket/vegetables/room3/condensator",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "7cc5cd12-9619-4e01-8bea-aec11bf891d5",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "036fa3aa-85b8-411a-ac20-7edcd430fb63",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "1d35e36b-1762-4abb-9702-3c6f0e9ec973",
+      "alias" : "/refrigerator/westmarket/vegetables/room3/defrosting",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "14566871-7479-459b-a0a7-937a49041269",
+      "alias" : "/refrigerator/westmarket/vegetables/room3/compressor_rpm",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "33a44a82-2dfb-498d-b4be-a68d4e0df7be",
+      "alias" : "/refrigerator/westmarket/vegetables/room3/Alarm_code",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "55e10760-70a1-49d4-8acc-06b8b312fe55",
+      "alias" : "/refrigerator/westmarket/vegetables/room3/door_state",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    }, {
+      "id" : "0eed61eb-ec68-4a7d-83bb-a0ebe99da5e6",
+      "alias" : "/refrigerator/westmarket/vegetables/room3/state",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    } ],
+    "assetHierarchies" : [ ],
+    "tags" : [ ]
+  }, {
+    "assetId" : "05341e00-f574-452f-8473-279a66cbbfe1",
+    "assetModelId" : "2172865e-d048-4c3f-a06e-328b1cbae181",
+    "assetName" : "vegetables",
+    "assetProperties" : [ {
+      "id" : "52f18b39-fce4-4fb7-87e3-8ade482034a7",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    } ],
+    "assetHierarchies" : [ {
+      "id" : "d22c8adc-a038-4f28-8766-1e989370fd73",
+      "childAssetId" : "91a8c05b-b7f4-4650-b011-e48e4223fdeb"
+    }, {
+      "id" : "d22c8adc-a038-4f28-8766-1e989370fd73",
+      "childAssetId" : "29357565-c5bf-4a4d-8eba-48243a0f5658"
+    }, {
+      "id" : "d22c8adc-a038-4f28-8766-1e989370fd73",
+      "childAssetId" : "1718c2c2-b1ef-4783-8ea7-05946c0f09e0"
+    }, {
+      "id" : "d22c8adc-a038-4f28-8766-1e989370fd73",
+      "childAssetId" : "23bf8b19-1d54-4e77-b5c9-8cd216c0879d"
+    } ],
+    "tags" : [ ]
+  }, {
+    "assetId" : "4278584e-4b2f-461f-b8eb-0cc53f2adf87",
+    "assetModelId" : "027a24ab-08b2-4630-91ff-00284d3056ff",
+    "assetName" : "Refrigerator",
+    "assetProperties" : [ {
+      "id" : "b45657e6-19c5-4e36-a04a-00b95a707407",
+      "retainDataOnAliasChange" : "TRUE",
+      "propertyNotificationState" : "DISABLED"
+    } ],
+    "assetHierarchies" : [ {
+      "id" : "b9d385d4-675f-4316-9fd5-98784f6a6db2",
+      "childAssetId" : "c2d4de55-9118-458b-9e05-789f132910cd"
+    } ],
+    "tags" : [ ]
+  } ]
+}
