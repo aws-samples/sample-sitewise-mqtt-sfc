@@ -36,23 +36,23 @@ The result is a system where OT and custom protocols can be integrated with the 
 
 
 ```
-          +----------+                                                               
-          | External |  MQTT                                                         
-  +-------+ Protocol +--------------+                                                
-3rd party | converter|              |                                                
-protocol  +----------+              |                                                
-                                    |                                                
-          +-------------------------+---------------------------+                    
+          +----------+
+          | External |  MQTT
+  +-------+ Protocol +--------------+
+3rd party | converter|              |
+protocol  +----------+              |
+                                    |   
+          +-------------------------+---------------------------+ 
           |                         |                           |                    
           |                         |                           |                    
           | +----------+     +------v------+     +-----------+  |                    
           | |          |MQTT |             |MQTT |           +--+--> AWS IoT Sitewise
 OPC-UA----+-+  OPC-UA  +-----> MQTT Broker +-----> Publisher |  |                    
 Server    | | Collector|     |             |     |           +--+--> Amazon S3       
-          | +----------+     +-------------+     +-----------+  |                    
+          | +----------+     +-------------+     +-----------+  |  
+          |                                                     |
           |                                                     |                    
-          |                                                     |                    
-          +---MQTT-enabled-Sitewise-Gateway---------------------+                                        
+          +---MQTT-enabled-Sitewise-Gateway---------------------+ 
 ```
 
 *Figure 1:  MQTT-enabled Sitewise Gateway - Open for external Protocol-Converters*
