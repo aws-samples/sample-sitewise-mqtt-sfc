@@ -111,7 +111,7 @@ Simulator      | +----------+     +-------------+     +-----------+  |
                +-----------------------------------------------------+                    
 ```
 
-*Figure 2: SFC used as `External protocol converter`, collecting fom Modbus-TCP & sending to local MQTT broker*
+*Figure 2: SFC used as `External protocol converter`, collecting from Modbus-TCP & sending to local MQTT broker*
 
 
 As shown in Figure 2, the demonstration system consists of five main components:
